@@ -24,9 +24,7 @@ body > :not(.sidebar) {
     flex: 1;
 }
 
-.new-dialog {
-    min-width: 400px;
-    min-height: 400px;
+dialog {
     justify-self: center;
     align-self: center;
 }
