@@ -3,7 +3,7 @@ export default class Project {
     #tasks = []
     #finished = []
     id = `p-${crypto.randomUUID()}`
-    dom = new ProjectDom('jack')
+    dom = new ProjectDom()
     constructor(title) {
         this.title = title
     }
@@ -24,5 +24,10 @@ export default class Project {
     deleteTask(task) {
         this.#tasks = this.#tasks.filter((item) => item.id !== task.id)
         if (task.status) this.#finished.push(task)
+    }
+
+    editTask(task, newTask) {
+        const index = this.#tasks.findIndex((item) => item === task)
+        this.#tasks[index] = newTask
     }
 }

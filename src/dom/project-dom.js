@@ -1,8 +1,9 @@
 import TaskDom from './task-dom.js'
+import { addForm } from './task-form.js'
 export default class ProjectDom {
     main = document.querySelector('.main')
     sidebar = document.querySelector('.sidebar')
-    dial = document.querySelector('.task-dialog')
+    
     display(obj) {
         this.main.innerHTML = ''
         this.main.id = obj.id
@@ -17,7 +18,9 @@ export default class ProjectDom {
         const add = document.createElement('button')
         add.textContent = 'Add Task'
         header.appendChild(add)
-        add.addEventListener('click', () => this.dial.showModal())
+        add.addEventListener('click', function() {
+            addForm(obj)
+        })
 
         const tasks = document.createElement('div')
         tasks.classList.add('tasks')
@@ -26,6 +29,7 @@ export default class ProjectDom {
             TaskDom.append(item, obj)
         })
     }
+
     append(obj) {
         this.display(obj)
         const but = document.createElement('button')

@@ -30,6 +30,10 @@ dialog {
 }
 
 .task {
+    margin-bottom: -1px;
+    border: solid black;
+    border-width: 1px 0;
+    border-collapse: separate;
     max-width: fit-content;
 }
 
@@ -37,7 +41,7 @@ dialog {
     background-color: hsl(350, 100%, 90%);
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(6, 150px);
+    grid-template-columns: 300px repeat(6, 150px);
     gap: 15px 30px;
 }
 
@@ -46,6 +50,11 @@ dialog {
 }
 
 .desc {
+    border-top: 1px solid black;
     padding: 10px 25px;
     background-color: hsl(350, 100%, 90%);
+}
+
+.desc:hover {
+    background-color: hsl(350, 100%, 80%);
 }

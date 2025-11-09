@@ -1,11 +1,19 @@
 export default class Task {
     idParent
-    status = false
+    #status = false
     constructor(name, desc, due, priority) {
         this.name = name
         this.desc = desc
         this.due = due
         this.priority = priority
         this.id = `t-${crypto.randomUUID()}`
+    }
+
+    get status() {
+        return this.#status
+    }
+
+    set status(bool) {
+        return this.#status = bool
     }
 }

@@ -12,36 +12,13 @@
     </nav>
     <div class="main"></div>
     <dialog closedby="any" class="proj-dialog"><form action="" class="proj-form">
-        <h1>New Project</h1>
+        <h1 class="proj-header">New Project</h1>
         <div class="proj-title">
             <label for="proj-title">Project title:</label>
             <input type="text" name="proj-title" id="proj-title" minlength="6" required>
         </div>
         <button type="submit">Create project</button>
     </form></dialog>
-    <dialog closedby="any" class="task-dialog"><form action="" class="task-form">
-        <h1>New Task</h1>
-        <div class="task-name">
-            <label for="task-name">Name:</label>
-            <input type="text" name="task-name" id="task-name" minlength="2" required>
-        </div>
-        <div class="task-desc">
-            <label for="task-desc">Description:</label>
-            <textarea name="task-desc" id="task-desc"></textarea>
-        </div>
-        <div class="task-due">
-            <label for="task-due">Due Date:</label>
-            <input type="date" name="task-due" id="task-due" value="2025-11-11">
-        </div>
-        <div class="task-prio">
-            <label for="task-prio">Priority:</label>
-            <select name="task-prio" id="task-prio">
-                <option value="low">Low</option>
-                <option value="med">Medium</option>
-                <option value="high">High</option>
-            </select>
-        </div>
-        <button type="submit">Add task</button>
-    </form></dialog>
+    <dialog closedby="any" class="task-dialog"></dialog>
 </body>
 </html>
