@@ -13,9 +13,13 @@ const ProjectManger = (function() {
     projects[1].addTask(new Task('kill', 'must... kill...', 'tomorrow', 'high'))
     projects[1].dom.append(projects[1])
 
+    const newProject = function(obj) {
+        projects.push(obj)
+        obj.dom.append(obj)
+    }
     const getActiveProject = () => projects.filter((item) => item.id === document.querySelector('.main').id)[0]
 
-    return { getActiveProject }
+    return { newProject, getActiveProject }
 })()
 
 const projBut = document.querySelector('.proj-button')
@@ -27,8 +31,7 @@ function addProj(event) {
     event.preventDefault()
     const formData = new FormData(projForm)
     const title = formData.get('proj-title')
-    const project = new Project(title)
-    project.dom.append(project)
+    ProjectManger.newProject(new Project(title))
     projDial.close()
 }
 
