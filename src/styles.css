@@ -12,4 +12,14 @@
 
 body {
     background-color: hsl(0, 0%, 75%);
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+body > :not(.sidebar) {
+    flex: 1;
 }
