@@ -8,8 +8,16 @@
 <body>
     <nav class="sidebar">
         <h1>To Do List</h1>
-        <button class="new">New project</button>
+        <button class="new-button">New project</button>
     </nav>
     <div class="main"></div>
+    <dialog closedby="any" class="new-dialog"><form action="" class="new-form">
+        <h1>New Project</h1>
+        <div class="new-title">
+            <label for="new-title">Project title:</label>
+            <input type="text" name="new-title" id="new-title" required>
+        </div>
+        <button type="submit">Create project</button>
+    </form></dialog>
 </body>
 </html>

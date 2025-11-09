@@ -2,10 +2,10 @@ import ProjectDom from '../dom/project-dom.js'
 export default class Project {
     #tasks = []
     #finished = []
+    id = `p-${crypto.randomUUID()}`
     dom = new ProjectDom('jack')
     constructor(title) {
         this.title = title
-        this.id = `p-${crypto.randomUUID()}`
     }
 
     get tasks() {

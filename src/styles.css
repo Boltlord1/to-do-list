@@ -23,3 +23,10 @@ body {
 body > :not(.sidebar) {
     flex: 1;
 }
+
+.new-dialog {
+    min-width: 400px;
+    min-height: 400px;
+    justify-self: center;
+    align-self: center;
+}
