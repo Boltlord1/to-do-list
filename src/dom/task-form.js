@@ -11,8 +11,8 @@ export default function generateForm(edit, proj, task) {
     form.appendChild(header)
 
     const contents = [
-        { class: 'task-name', text: 'Name:' }, { class: 'task-desc', text: 'Description:' },
-        { class: 'task-due', text: 'Due date:' }, { class: 'task-prio', text: 'Priority:' }
+        { class: 'task-name', text: 'Name' }, { class: 'task-desc', text: 'Description' },
+        { class: 'task-due', text: 'Due date' }, { class: 'task-prio', text: 'Priority' }
     ]
     for (const [index, obj] of contents.entries()) {
         obj.parent = document.createElement('div')
@@ -35,24 +35,32 @@ export default function generateForm(edit, proj, task) {
     contents[0].input.minLength = 4
     contents[2].input.type = 'date'
     contents[2].input.required = true
+    contents[3].button = document.createElement('button')
+    contents[3].selected = document.createElement('selectedcontent')
+    contents[3].button.appendChild(contents[3].selected)
+    contents[3].input.appendChild(contents[3].button)
 
-    contents[3].options = []
-    const priorities = ['low', 'medium', 'high']
-    for (const [index, prio] of priorities.entries()) {
-        contents[3].options.push(document.createElement('option'))
-        contents[3].options[index].value = prio
-        contents[3].options[index].textContent = prio.charAt(0).toUpperCase() + prio.slice(1)
-        contents[3].input.appendChild(contents[3].options[index])
+    contents[3].options = [ { text: 'low'}, { text: 'medium'}, { text: 'high'} ]
+    for (const opt of contents[3].options) {
+        opt.option = document.createElement('option')
+        opt.option.classList.add('option')
+        opt.option.classList.add(opt.text)
+        opt.option.value = opt.text
+        opt.span = document.createElement('span')
+        opt.span.textContent = opt.text.charAt(0).toUpperCase() + opt.text.slice(1)
+        opt.option.appendChild(opt.span)
+        contents[3].input.appendChild(opt.option)
     }
 
     if (edit) {
         contents[0].input.value = task.name
         contents[1].input.textContent = task.desc
         contents[2].input.value = task.due
-        contents[3].options.find((item) => item.value === task.priority).selected = true
+        contents[3].options.find((item) => item.option.value === task.priority).option.selected = true
     }
 
     const sub = document.createElement('button')
+    sub.classList.add('task-submit')
     sub.type = 'submit'
     sub.textContent = edit ? 'Edit' : 'Add'
     form.appendChild(sub)

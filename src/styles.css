@@ -172,3 +172,106 @@ dialog {
 .desc:hover {
     background-color: hsl(350, 100%, 94%);
 }
+
+dialog {
+    appearance: none;
+    padding: 30px 100px;
+}
+
+.proj-form,
+.task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.proj-title {
+    appearance: none;
+    width: 140%;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px black solid;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #0003;
+}
+
+.proj-title:focus {
+    outline: none;
+    border: 1px blue solid;
+}
+
+.proj-submit,
+.task-submit {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.proj-submit:hover,
+.task-submit:hover {
+    background-color: #0002;
+}
+
+.task-form > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 81px 200px;
+    align-items: center;
+    gap: 15px;
+}
+
+.task-form > div > input,
+.task-desc > textarea {
+    appearance: none;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 5px 10px;
+}
+
+.task-form > div > input:focus,
+.task-desc > textarea:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 5px #0003;
+}
+
+.task-desc > textarea {
+    resize: none;
+}
+
+select,
+::picker(select) {
+    appearance: base-select;
+    border-radius: 15px;
+}
+
+select::picker-icon {
+  color: #999999;
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+    top: calc(anchor(bottom));
+}
+
+selectedcontent {
+    padding: 5px 15px;
+}
+
+.option {
+    padding: 5px 15px;
+}
+
+option:checked {
+    background-color: #eee;
+    font-weight: 500;
+}
+
+.option::checkmark {
+    display: none;
+}
