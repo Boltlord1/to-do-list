@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -11,17 +13,55 @@
 }
 
 body {
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 10%);
     min-height: 100vh;
     display: flex;
+    justify-content: center;
+}
+
+button {
+    appearance: none;
+    color: inherit;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: inherit;
+    border: none;
+}
+
+::backdrop {
+    background-color: #0005;
 }
 
 .sidebar {
+    color: white;
+    background-color: hsl(240, 25%, 25%);
     width: 200px;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
 }
 
-body > :not(.sidebar) {
-    flex: 1;
+.sidebar > * {
+    padding: 15px;
+}
+
+.sidebar > button:hover {
+    background-color: hsl(240, 25%, 35%);
+}
+
+.sidebar > button:active {
+    background-color: hsl(240, 25%, 45%);
+}
+
+.proj-button {
+    margin-bottom: 60px;
+}
+
+.main {
+    background-color: hsl(30, 100%, 97%);
+    width: 1920px;
 }
 
 dialog {
@@ -34,27 +74,83 @@ dialog {
     border: solid black;
     border-width: 1px 0;
     border-collapse: separate;
-    max-width: fit-content;
 }
 
 .row {
-    background-color: hsl(350, 100%, 90%);
-    padding: 15px;
+    background-color: hsl(350, 100%, 97%);
+    font-size: 1.4rem;
+    padding: 10px;
     display: grid;
-    grid-template-columns: 300px repeat(6, 150px);
+    grid-template-columns: auto 1fr 150px 120px auto auto auto;
     gap: 15px 30px;
 }
 
 .row:hover {
-    background-color: hsl(350, 100%, 80%);
+    background-color: hsl(350, 100%, 94%);
+}
+
+.row svg:not(.drop) {
+    height: 24px;
+    width: auto;
+}
+
+.drop {
+    height: 12px;
+    width: auto;
+    align-self: center;
+} 
+
+.row button {
+    padding: 5px;
+    height: 34px;
+    align-self: center;
+}
+
+.row button:hover {
+    background-color: #0003;
+    border-radius: 100%;
+}
+
+.row > div {
+    padding: 5px;
+}
+
+.priority {
+    background-color: #0004;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.high {
+    color: hsl(0, 100%, 50%);
+}
+
+.medium {
+    color: hsl(60, 100%, 50%);
+}
+
+.low {
+    color: hsl(120, 100%, 50%);
+}
+
+.check:hover {
+    fill: hsl(120, 100%, 50%);
+}
+
+.cross:hover {
+    fill: hsl(0, 100%, 50%);
+}
+
+.pencil:hover {
+    fill: hsl(0, 0%, 100%);
 }
 
 .desc {
     border-top: 1px solid black;
     padding: 10px 25px;
-    background-color: hsl(350, 100%, 90%);
+    background-color: hsl(350, 100%, 95%);
 }
 
 .desc:hover {
-    background-color: hsl(350, 100%, 80%);
+    background-color: hsl(350, 100%, 94%);
 }

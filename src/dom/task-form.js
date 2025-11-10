@@ -1,5 +1,5 @@
 import Task from '../logic/task.js'
-function generateForm(edit, proj, task) {
+export default function generateForm(edit, proj, task) {
     const dial = document.querySelector('.task-dialog') 
     const form = document.createElement('form')
     dial.replaceChildren()
@@ -71,13 +71,3 @@ function generateForm(edit, proj, task) {
         proj.dom.display(proj)
     })
 }
-
-function addForm(proj) {
-    generateForm(false, proj)
-}
-
-function editForm(proj, task) {
-    generateForm(true, proj, task)
-}
-
-export { addForm, editForm}

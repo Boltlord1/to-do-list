@@ -1,5 +1,5 @@
 import TaskDom from './task-dom.js'
-import { addForm } from './task-form.js'
+import generateForm from './task-form.js'
 export default class ProjectDom {
     main = document.querySelector('.main')
     sidebar = document.querySelector('.sidebar')
@@ -19,7 +19,7 @@ export default class ProjectDom {
         add.textContent = 'Add Task'
         header.appendChild(add)
         add.addEventListener('click', function() {
-            addForm(obj)
+            generateForm(false, obj)
         })
 
         const tasks = document.createElement('div')
